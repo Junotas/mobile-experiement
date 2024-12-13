@@ -19,30 +19,30 @@ export const Route = createFileRoute("/about")({
 
     return (
       <Box
-        className="flex flex-col justify-center items-center min-h-screen"
+        className="flex flex-col justify-center items-center ~min-h-screen/3xl"
         sx={{ backgroundColor: theme.palette.background.default }}
       >
         <Typography
           variant="h1"
           align="center"
+          className="~text-lg/4xl mb-4/12"
           sx={{
             fontWeight: "bold",
             color: theme.palette.text.primary,
-            marginBottom: theme.spacing(4),
           }}
         >
           About Us
         </Typography>
 
-        <Box className="flex justify-center space-x-12 mb-8">
+        <Box className="flex justify-center ~space-x-6/12 ~mb-6/18">
           <img
             src={viteLogo}
-            className="h-32 animate-spin-slow"
+            className="~h-12/24 animate-spin-slow"
             alt="Vite logo"
           />
           <img
             src={reactLogo}
-            className="h-32 animate-pulse"
+            className="~h-12/24 animate-pulse"
             alt="React logo"
           />
         </Box>
@@ -50,9 +50,9 @@ export const Route = createFileRoute("/about")({
         <Typography
           variant="body1"
           align="center"
+          className="~text-base/2xl mb-4/12"
           sx={{
             color: theme.palette.text.primary,
-            marginBottom: theme.spacing(4),
             maxWidth: "600px",
           }}
         >
@@ -64,7 +64,10 @@ export const Route = createFileRoute("/about")({
           variant="contained"
           color="primary"
           onClick={toggleMessage}
-          sx={{ fontWeight: "bold", marginBottom: theme.spacing(2) }}
+          className="~px-4/8 ~py-2/4 ~mb-2/6"
+          sx={{
+            fontWeight: "bold",
+          }}
         >
           Click for a Surprise!
         </Button>
@@ -72,9 +75,9 @@ export const Route = createFileRoute("/about")({
         <Typography
           variant="h6"
           align="center"
+          className="~text-lg/2xl mt-2/6"
           sx={{
             color: theme.palette.text.primary,
-            marginTop: theme.spacing(2),
           }}
         >
           {message}

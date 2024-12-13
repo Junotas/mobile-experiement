@@ -9,8 +9,8 @@ import FutureEnhancements from "../components/FutureEnhancements";
 
 const WelcomePage = () => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="flex-grow">
+    <div className="flex flex-col ~min-h-screen/3xl">
+      <div className="~flex-grow/6">
         <GettingStarted />
         <Routing />
         <TechStack />
@@ -21,7 +21,6 @@ const WelcomePage = () => {
     </div>
   );
 };
-
 
 export const Route = createFileRoute("/")({
   component: WelcomePage,

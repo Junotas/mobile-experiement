@@ -36,11 +36,11 @@ export const Route = createFileRoute("/list")({
 
     return (
       <Box
-        className="flex flex-col justify-center items-center min-h-screen"
+        className="flex flex-col justify-center items-center ~min-h-screen/3xl"
         sx={{ backgroundColor: theme.palette.background.default }}
       >
         <Box
-          className="w-full max-w-md"
+          className="w-full ~max-w-md"
           sx={{
             backgroundColor: theme.palette.background.paper,
             borderRadius: theme.shape.borderRadius,
@@ -49,12 +49,16 @@ export const Route = createFileRoute("/list")({
             color: theme.palette.text.primary,
           }}
         >
-          <Box className="flex justify-between items-center border-b pb-3 mb-4">
-            <Box className="flex items-center space-x-2">
+          <Box className="flex justify-between items-center border-b pb-3 ~mb-4/12">
+            <Box className="flex items-center ~space-x-2/4">
               <GroupIcon sx={{ color: theme.palette.primary.main }} />
               <Typography
                 variant="h4"
-                sx={{ color: theme.palette.primary.main, fontWeight: "bold" }}
+                className="~text-lg/2xl"
+                sx={{
+                  color: theme.palette.primary.main,
+                  fontWeight: "bold",
+                }}
               >
                 User List
               </Typography>
@@ -63,7 +67,10 @@ export const Route = createFileRoute("/list")({
               variant="contained"
               color="primary"
               onClick={toggleFetch}
-              sx={{ fontWeight: "bold", marginBottom: 2 }}
+              className="~px-4/8 ~py-2/4"
+              sx={{
+                fontWeight: "bold",
+              }}
               startIcon={<ReplayCircleFilledIcon />}
             >
               {isModified ? "Reset List" : "Fetch List"}
@@ -71,7 +78,7 @@ export const Route = createFileRoute("/list")({
           </Box>
 
           <Box
-            className="max-h-[250px] overflow-y-auto scrollbar-thin"
+            className="~max-h-[250px] overflow-y-auto scrollbar-thin"
             sx={{
               scrollbarColor: `${theme.palette.grey[400]} ${theme.palette.grey[200]}`,
             }}
@@ -83,12 +90,11 @@ export const Route = createFileRoute("/list")({
                 Error loading users
               </Typography>
             ) : (
-              <ul className="list-disc list-inside text-center space-y-2">
+              <ul className="list-disc list-inside text-center ~space-y-2/6">
                 {users.map((user) => (
                   <li
                     key={user.id}
-                    className="flex justify-between items-center text-lg"
-                    style={{ color: "black" }} // Set to black explicitly
+                    className="flex justify-between items-center ~text-lg/2xl"
                   >
                     {user.name}
                     <IconButton
@@ -104,21 +110,16 @@ export const Route = createFileRoute("/list")({
             )}
           </Box>
 
-          <form onSubmit={handleFormSubmit} className="flex items-center mt-4">
+          <form onSubmit={handleFormSubmit} className="flex items-center mt-4/12">
             <TextField
               variant="outlined"
               label="Add new user"
               value={newUserName}
               onChange={(e) => setNewUserName(e.target.value)}
               fullWidth
+              className="~px-4/8"
               sx={{
                 mr: 2,
-                "& .MuiInputBase-input": {
-                  color: "black", // Set input text to black explicitly
-                },
-                "& .MuiInputLabel-root": {
-                  color: "black", // Set label text to black explicitly
-                },
               }}
             />
             <IconButton type="submit" color="secondary" aria-label="add user">
