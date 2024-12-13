@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import fluid from 'tailwindcss-fluid';
+
 export default {
   content: [
     "./index.html",
@@ -7,5 +9,7 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [
+    fluid(),
+  ],
+};
