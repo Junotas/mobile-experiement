@@ -7,15 +7,15 @@ export default {
       "./index.html",
       "./src/**/*.{js,jsx,ts,tsx}",
     ],
-    extract, // Required for Fluid Tailwind
+    extract, 
   },
   theme: {
     screens: {
-      xs: '20rem', // Add custom screens (optional)
+      xs: '20rem', 
     },
     extend: {
       fluid: ({ theme }) => ({
-        defaultScreens: ['20rem', theme('screens.lg')], // Customize default start/end breakpoints
+        defaultScreens: ['20rem', theme('screens.lg')], 
       }),
     },
   },
